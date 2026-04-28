@@ -19,12 +19,11 @@ export default function TabUndangan() {
       <div className="text-center">
         <p className="text-blue-400 text-xs mb-2">Dengan hormat mengundang:</p>
         <div className="bg-blue-50/80 rounded-2xl p-4 border border-blue-100">
-          <p className="text-blue-800 font-bold">
-            Bapak Joko Pramono, S.Pd., M.Ds.
+          <p className="text-blue-800 font-bold text-base">
+            Bapak / Ibu Guru
           </p>
-          <p className="text-blue-500 text-xs italic my-0.5">Sebagai</p>
-          <p className="text-blue-700 font-semibold text-sm">
-            Kepala SMK Negeri 1 Adiwerna
+          <p className="text-blue-700 font-semibold text-sm mt-0.5">
+            SMK Negeri 1 Adiwerna
           </p>
         </div>
       </div>
