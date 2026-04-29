@@ -1,7 +1,10 @@
 import { useState } from "react";
 
-export default function TabRSVP() {
-  const [form, setForm] = useState({ name: "", attend: "hadir", msg: "" });
+export default function TabRSVP({ student }) {
+  const defaultName = student?.name
+    ? student.name.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())
+    : "";
+  const [form, setForm] = useState({ name: defaultName, attend: "hadir", msg: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {

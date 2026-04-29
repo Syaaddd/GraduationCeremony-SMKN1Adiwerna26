@@ -9,7 +9,14 @@ const sparkles = [
   { top: "32%", right: "3%", fontSize: "13px", animationDelay: "0.8s" },
 ];
 
-export default function OpeningScreen({ onOpen }) {
+export default function OpeningScreen({ onOpen, student }) {
+  // Capitalize name nicely: AKHSAN TRI → Akhsan Tri
+  const displayName = student?.name
+    ? student.name
+        .toLowerCase()
+        .replace(/\b\w/g, (c) => c.toUpperCase())
+    : "";
+
   return (
     <div
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -34,7 +41,22 @@ export default function OpeningScreen({ onOpen }) {
       ))}
 
       <div className="text-center px-6 max-w-xs mx-auto relative z-10 animate-fade-in">
-        <div className="text-6xl mb-5 animate-float inline-block">🎓</div>
+        <div className="text-6xl mb-4 animate-float inline-block">🎓</div>
+
+        {/* Personal greeting */}
+        {displayName && (
+          <div className="bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl px-5 py-3 mb-5 shadow-sm">
+            <p className="text-blue-400 text-[10px] uppercase tracking-widest mb-0.5">
+              Selamat Datang
+            </p>
+            <p
+              className="text-blue-700 font-bold text-base leading-snug"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              {displayName}
+            </p>
+          </div>
+        )}
 
         <p className="text-blue-400 text-xs tracking-widest uppercase font-medium mb-2">
           Anda Diundang ke

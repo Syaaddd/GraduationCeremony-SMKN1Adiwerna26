@@ -1,4 +1,8 @@
-export default function TabUndangan() {
+export default function TabUndangan({ student }) {
+  const displayName = student?.name
+    ? student.name.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())
+    : "Bapak/Ibu/Saudara/i";
+
   return (
     <div className="bg-white/60 backdrop-blur-md rounded-3xl p-6 border border-blue-100 shadow-sm space-y-5 animate-fade-in">
       {/* Opening */}
@@ -6,10 +10,20 @@ export default function TabUndangan() {
         <p className="text-blue-400 text-xs tracking-widest uppercase mb-3 font-medium">
           Bismillahirrahmanirrahim
         </p>
+        {/* Personalized greeting */}
+        <div className="bg-gradient-to-r from-blue-50 to-blue-100/60 rounded-2xl px-4 py-3 mb-3 border border-blue-100">
+          <p className="text-blue-400 text-[10px] uppercase tracking-widest mb-0.5">Kepada Yth.</p>
+          <p className="text-blue-800 font-bold text-base" style={{ fontFamily: "'Playfair Display', serif" }}>
+            {displayName}
+          </p>
+          {student?.nis && (
+            <p className="text-blue-400 text-[10px] mt-0.5">NIS: {student.nis}</p>
+          )}
+        </div>
         <p className="text-blue-700 text-sm leading-relaxed italic">
-          Dengan memohon rahmat dan ridho Allah SWT, kami mengundang
-          Bapak/Ibu/Saudara/i untuk menghadiri acara pelepasan siswa-siswi
-          kelas XII SMK Negeri 1 Adiwerna Tahun Ajaran 2025/2026:
+          Dengan memohon rahmat dan ridho Allah SWT, kami mengundang untuk
+          menghadiri acara pelepasan siswa-siswi kelas XII SMK Negeri 1
+          Adiwerna Tahun Ajaran 2025/2026:
         </p>
       </div>
 
