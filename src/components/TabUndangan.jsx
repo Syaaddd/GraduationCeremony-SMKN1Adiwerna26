@@ -5,11 +5,13 @@ export default function TabUndangan({ student }) {
 
   return (
     <div className="bg-white/60 backdrop-blur-md rounded-3xl p-6 border border-blue-100 shadow-sm space-y-5 animate-fade-in">
-      {/* Opening */}
+
+      {/* Bismillah */}
       <div className="text-center">
         <p className="text-blue-400 text-xs tracking-widest uppercase mb-3 font-medium">
           Bismillahirrahmanirrahim
         </p>
+
         {/* Personalized greeting */}
         <div className="bg-gradient-to-r from-blue-50 to-blue-100/60 rounded-2xl px-4 py-3 mb-3 border border-blue-100">
           <p className="text-blue-400 text-[10px] uppercase tracking-widest mb-0.5">Kepada Yth.</p>
@@ -20,26 +22,12 @@ export default function TabUndangan({ student }) {
             <p className="text-blue-400 text-[10px] mt-0.5">NIS: {student.nis}</p>
           )}
         </div>
+
         <p className="text-blue-700 text-sm leading-relaxed italic">
           Dengan memohon rahmat dan ridho Allah SWT, kami mengundang untuk
           menghadiri acara pelepasan siswa-siswi kelas XII SMK Negeri 1
-          Adiwerna Tahun Ajaran 2025/2026:
+          Adiwerna Tahun Ajaran 2025/2026.
         </p>
-      </div>
-
-      <Divider />
-
-      {/* Tamu */}
-      <div className="text-center">
-        <p className="text-blue-400 text-xs mb-2">Dengan hormat mengundang:</p>
-        <div className="bg-blue-50/80 rounded-2xl p-4 border border-blue-100">
-          <p className="text-blue-800 font-bold text-base">
-            Bapak / Ibu Guru
-          </p>
-          <p className="text-blue-700 font-semibold text-sm mt-0.5">
-            SMK Negeri 1 Adiwerna
-          </p>
-        </div>
       </div>
 
       <Divider />
@@ -55,23 +43,48 @@ export default function TabUndangan({ student }) {
         >
           Graduation Ceremony
         </p>
-        <p className="text-blue-600 text-sm font-semibold">
-          Pelepasan Siswa-Siswi Kelas XII
-        </p>
+        <p className="text-blue-600 text-sm font-semibold">Pelepasan Siswa-Siswi Kelas XII</p>
         <p className="text-blue-700 font-bold text-sm">SMK Negeri 1 Adiwerna</p>
         <p className="text-red-400 text-xs font-medium">Tahun Ajaran 2025/2026</p>
       </div>
 
-      {/* Cards */}
+      {/* Info Cards */}
       <div className="grid grid-cols-2 gap-3">
         <InfoCard icon="📅" title="Hari/Tanggal" value="Rabu, 6 Mei 2026" />
         <InfoCard icon="🕖" title="Waktu" value="07.00 WIB – Selesai" />
         <div className="col-span-2">
-          <InfoCard
-            icon="📍"
-            title="Tempat"
-            value="Aula Graha Adiwiyata, SMKN 1 Adiwerna"
-          />
+          <InfoCard icon="📍" title="Tempat" value="Aula Graha Adiwiyata, SMKN 1 Adiwerna" />
+        </div>
+      </div>
+
+      <Divider />
+
+      {/* Dress Code */}
+      <div>
+        <p className="text-center text-blue-500 text-xs font-semibold uppercase tracking-widest mb-3">
+          👗 Dress Code
+        </p>
+        <div className="grid grid-cols-2 gap-3">
+          {/* Laki-laki */}
+          <div className="bg-blue-50/80 border border-blue-100 rounded-2xl p-4 text-center space-y-2">
+            <div className="text-3xl">👔</div>
+            <p className="text-blue-700 font-bold text-sm">Laki-laki</p>
+            <ul className="text-blue-600 text-xs space-y-1 text-left">
+              <li className="flex items-start gap-1"><span className="text-blue-300 mt-0.5">▸</span>Jas hitam</li>
+              <li className="flex items-start gap-1"><span className="text-blue-300 mt-0.5">▸</span>Celana hitam</li>
+              <li className="flex items-start gap-1"><span className="text-blue-300 mt-0.5">▸</span>Dasi (bebas)</li>
+            </ul>
+          </div>
+          {/* Perempuan */}
+          <div className="bg-pink-50/80 border border-pink-100 rounded-2xl p-4 text-center space-y-2">
+            <div className="text-3xl">👘</div>
+            <p className="text-pink-700 font-bold text-sm">Perempuan</p>
+            <ul className="text-pink-600 text-xs space-y-1 text-left">
+              <li className="flex items-start gap-1"><span className="text-pink-300 mt-0.5">▸</span>Baju kebaya</li>
+              <li className="flex items-start gap-1"><span className="text-pink-300 mt-0.5">▸</span>Bawahan rok</li>
+              <li className="flex items-start gap-1"><span className="text-pink-300 mt-0.5">▸</span>Wajib berhijab</li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -79,17 +92,14 @@ export default function TabUndangan({ student }) {
 
       {/* Quote */}
       <p className="text-center text-blue-600 text-sm font-semibold italic leading-relaxed">
-        "Merupakan suatu kehormatan apabila Bapak/Ibu/Saudara/i dapat hadir
-        pada acara ini"
+        "Merupakan suatu kehormatan apabila dapat hadir pada acara ini"
       </p>
 
       <Divider />
 
       {/* Footer */}
       <div className="text-center space-y-0.5">
-        <p className="text-blue-500 text-xs italic">
-          Hormat Kami Keluarga Besar
-        </p>
+        <p className="text-blue-500 text-xs italic">Hormat Kami Keluarga Besar</p>
         <p className="text-blue-700 font-bold text-sm">SMKN 1 Adiwerna</p>
         <p className="text-blue-400 text-xs">Adiwerna, 26 April 2026</p>
       </div>
@@ -117,12 +127,8 @@ function InfoCard({ icon, title, value }) {
   return (
     <div className="bg-white/70 border border-blue-100 rounded-2xl p-3 text-center">
       <span className="text-xl">{icon}</span>
-      <p className="text-blue-400 text-[10px] font-medium uppercase tracking-wide mt-1">
-        {title}
-      </p>
-      <p className="text-blue-700 text-xs font-semibold mt-0.5 leading-snug">
-        {value}
-      </p>
+      <p className="text-blue-400 text-[10px] font-medium uppercase tracking-wide mt-1">{title}</p>
+      <p className="text-blue-700 text-xs font-semibold mt-0.5 leading-snug">{value}</p>
     </div>
   );
 }
