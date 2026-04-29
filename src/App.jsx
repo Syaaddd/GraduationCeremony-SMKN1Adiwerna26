@@ -1,5 +1,6 @@
 import { useState } from "react";
 import NISScreen from "./components/NISScreen";
+import CelebrationScreen from "./components/CelebrationScreen";
 import OpeningScreen from "./components/OpeningScreen";
 import FloralCorner from "./components/FloralCorner";
 import CountdownTimer from "./components/CountdownTimer";
@@ -20,6 +21,7 @@ const sparkles = [
   { top: "68%", right: "4%", fontSize: "14px", animationDelay: "1.5s" },
 ];
 
+// Flow: "nis" → "celebration" → "opening" → "main"
 export default function App() {
   const [screen, setScreen]       = useState("nis");
   const [student, setStudent]     = useState(null);
@@ -27,11 +29,12 @@ export default function App() {
 
   const handleVerified = (studentData) => {
     setStudent(studentData);
-    setScreen("opening");
+    setScreen("celebration");
   };
 
-  if (screen === "nis")     return <NISScreen onVerified={handleVerified} />;
-  if (screen === "opening") return <OpeningScreen onOpen={() => setScreen("main")} student={student} />;
+  if (screen === "nis")          return <NISScreen onVerified={handleVerified} />;
+  if (screen === "celebration")  return <CelebrationScreen student={student} onContinue={() => setScreen("opening")} />;
+  if (screen === "opening")      return <OpeningScreen onOpen={() => setScreen("main")} student={student} />;
 
   const displayName = student?.name
     ? student.name.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase())
@@ -75,9 +78,9 @@ export default function App() {
       <main className="px-4 max-w-lg mx-auto space-y-5 pb-28">
         <div className="bg-white/60 backdrop-blur-md rounded-3xl p-5 shadow-sm border border-blue-100 grid grid-cols-3 gap-4 text-center">
           {[
-            { icon: "📅", main: "6 Mei 2026",           sub: "Rabu" },
-            { icon: "🕖", main: "07.00 WIB",             sub: "s/d Selesai" },
-            { icon: "📍", main: "Aula Graha Adiwiyata",  sub: "SMKN 1 Adiwerna" },
+            { icon: "📅", main: "6 Mei 2026",          sub: "Rabu" },
+            { icon: "🕖", main: "07.00 WIB",            sub: "s/d Selesai" },
+            { icon: "📍", main: "Aula Graha Adiwiyata", sub: "SMKN 1 Adiwerna" },
           ].map((c, i) => (
             <div key={i}>
               <div className="text-2xl mb-1">{c.icon}</div>
