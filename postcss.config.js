@@ -1,6 +1,5 @@
-export default {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
+node_modules
+dist
+.env
+.env.local
+.DS_Store

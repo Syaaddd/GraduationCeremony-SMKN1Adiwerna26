@@ -1,81 +1,15 @@
-# 🎓 Graduation Ceremony – Undangan Digital
-
-Website undangan wisuda digital untuk Pelepasan Siswa-Siswi Kelas XII SMK Negeri 1 Adiwerna Tahun Ajaran 2025/2026.
-
-## Tech Stack
-
-- **React 18** + **Vite**
-- **Tailwind CSS**
-- Google Fonts (Playfair Display, Dancing Script, Lato)
-
-## Fitur
-
-- Halaman pembuka animasi sebelum membuka undangan
-- Countdown timer real-time menuju hari H
-- 3 tab: Undangan, Rundown Acara, RSVP
-- Desain responsif mobile-first
-- Animasi halus (float, sparkle, fade-in)
-
----
-
-## Cara Deploy ke Vercel
-
-### Opsi 1 – Via GitHub (Recommended)
-
-1. **Upload project ke GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "first commit"
-   git branch -M main
-   git remote add origin https://github.com/USERNAME/graduation-invite.git
-   git push -u origin main
-   ```
-
-2. **Login ke [vercel.com](https://vercel.com)**
-
-3. Klik **"Add New Project"** → Import dari GitHub
-
-4. Pilih repo `graduation-invite`
-
-5. Vercel otomatis detect **Vite** → klik **Deploy**
-
-6. Selesai! Dapat URL seperti `graduation-invite.vercel.app`
-
----
-
-### Opsi 2 – Via Vercel CLI
-
-```bash
-# Install Vercel CLI
-npm install -g vercel
-
-# Di folder project
-npm install
-npm run build
-
-# Deploy
-vercel
-
-# Ikuti instruksi di terminal
-```
-
----
-
-## Menjalankan di Lokal
-
-```bash
-npm install
-npm run dev
-```
-
-Buka `http://localhost:5173`
-
----
-
-## Kustomisasi
-
-- **Data rundown** → edit `src/data/rundown.js`
-- **Tanggal & lokasi** → edit di `src/App.jsx` dan `src/components/TabUndangan.jsx`
-- **Countdown target** → edit `TARGET_DATE` di `src/components/CountdownTimer.jsx`
-- **Warna** → semua menggunakan Tailwind blue palette
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graduation Ceremony – SMK Negeri 1 Adiwerna</title>
+    <meta name="description" content="Undangan Pelepasan Siswa-Siswi Kelas XII SMK Negeri 1 Adiwerna Tahun Ajaran 2025/2026" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
