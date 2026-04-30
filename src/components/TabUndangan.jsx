@@ -37,10 +37,7 @@ export default function TabUndangan({ student }) {
         <p className="text-blue-500 text-xs font-medium uppercase tracking-widest">
           Untuk dapat hadir pada acara:
         </p>
-        <p
-          className="text-blue-700 text-2xl font-bold"
-          style={{ fontFamily: "'Dancing Script', cursive" }}
-        >
+        <p className="text-blue-700 text-2xl font-bold" style={{ fontFamily: "'Dancing Script', cursive" }}>
           Graduation Ceremony
         </p>
         <p className="text-blue-600 text-sm font-semibold">Pelepasan Siswa-Siswi Kelas XII</p>
@@ -51,7 +48,7 @@ export default function TabUndangan({ student }) {
       {/* Info Cards */}
       <div className="grid grid-cols-2 gap-3">
         <InfoCard icon="📅" title="Hari/Tanggal" value="Rabu, 6 Mei 2026" />
-        <InfoCard icon="🕖" title="Waktu" value="07.00 WIB – Selesai" />
+        <InfoCard icon="🕖" title="Waktu" value="06.45 WIB – Selesai" />
         <div className="col-span-2">
           <InfoCard icon="📍" title="Tempat" value="Aula Graha Adiwiyata, SMKN 1 Adiwerna" />
         </div>
@@ -59,30 +56,49 @@ export default function TabUndangan({ student }) {
 
       <Divider />
 
-      {/* Dress Code */}
+      {/* Dress Code Siswa */}
       <div>
         <p className="text-center text-blue-500 text-xs font-semibold uppercase tracking-widest mb-3">
-          👗 Dress Code
+          👔 Dress Code Siswa
         </p>
         <div className="grid grid-cols-2 gap-3">
-          {/* Laki-laki */}
           <div className="bg-blue-50/80 border border-blue-100 rounded-2xl p-4 text-center space-y-2">
-            <div className="text-3xl">👔</div>
+            <div className="text-3xl">🤵</div>
             <p className="text-blue-700 font-bold text-sm">Laki-laki</p>
             <ul className="text-blue-600 text-xs space-y-1 text-left">
-              <li className="flex items-start gap-1"><span className="text-blue-300 mt-0.5">▸</span>Jas hitam</li>
-              <li className="flex items-start gap-1"><span className="text-blue-300 mt-0.5">▸</span>Celana hitam</li>
-              <li className="flex items-start gap-1"><span className="text-blue-300 mt-0.5">▸</span>Dasi (bebas)</li>
+              <li className="flex items-start gap-1.5"><span className="text-blue-300 shrink-0 mt-0.5">▸</span>Jas eksekutif hitam</li>
+              <li className="flex items-start gap-1.5"><span className="text-blue-300 shrink-0 mt-0.5">▸</span>Dasi warna bebas</li>
             </ul>
           </div>
-          {/* Perempuan */}
           <div className="bg-pink-50/80 border border-pink-100 rounded-2xl p-4 text-center space-y-2">
             <div className="text-3xl">👘</div>
             <p className="text-pink-700 font-bold text-sm">Perempuan</p>
             <ul className="text-pink-600 text-xs space-y-1 text-left">
-              <li className="flex items-start gap-1"><span className="text-pink-300 mt-0.5">▸</span>Baju kebaya</li>
-              <li className="flex items-start gap-1"><span className="text-pink-300 mt-0.5">▸</span>Bawahan rok</li>
-              <li className="flex items-start gap-1"><span className="text-pink-300 mt-0.5">▸</span>Wajib berhijab</li>
+              <li className="flex items-start gap-1.5"><span className="text-pink-300 shrink-0 mt-0.5">▸</span>Baju kebaya</li>
+              <li className="flex items-start gap-1.5"><span className="text-pink-300 shrink-0 mt-0.5">▸</span>Wajib berhijab</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Dress Code Guru */}
+      <div>
+        <p className="text-center text-blue-500 text-xs font-semibold uppercase tracking-widest mb-3">
+          🎩 Dress Code Guru
+        </p>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="bg-slate-50/80 border border-slate-100 rounded-2xl p-4 text-center space-y-2">
+            <div className="text-3xl">🤵</div>
+            <p className="text-slate-700 font-bold text-sm">Bapak Guru</p>
+            <ul className="text-slate-600 text-xs space-y-1 text-left">
+              <li className="flex items-start gap-1.5"><span className="text-slate-300 shrink-0 mt-0.5">▸</span>Jas eksekutif</li>
+            </ul>
+          </div>
+          <div className="bg-purple-50/80 border border-purple-100 rounded-2xl p-4 text-center space-y-2">
+            <div className="text-3xl">👘</div>
+            <p className="text-purple-700 font-bold text-sm">Ibu Guru</p>
+            <ul className="text-purple-600 text-xs space-y-1 text-left">
+              <li className="flex items-start gap-1.5"><span className="text-purple-300 shrink-0 mt-0.5">▸</span>Baju kebaya</li>
             </ul>
           </div>
         </div>
@@ -105,7 +121,7 @@ export default function TabUndangan({ student }) {
       </div>
 
       <div className="border-t border-blue-100 pt-4 text-center space-y-0.5">
-        <p className="text-blue-400 text-xs">Mengetahui – Ketua Pelaksana</p>
+        <p className="text-blue-400 text-xs">Ketua Angkatan</p>
         <p className="text-blue-800 font-bold">Rizziq Fadhilah Akbar</p>
         <p className="text-blue-400 text-xs">NIS: 23.21085</p>
       </div>

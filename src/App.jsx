@@ -79,7 +79,7 @@ export default function App() {
         <div className="bg-white/60 backdrop-blur-md rounded-3xl p-5 shadow-sm border border-blue-100 grid grid-cols-3 gap-4 text-center">
           {[
             { icon: "📅", main: "6 Mei 2026",          sub: "Rabu" },
-            { icon: "🕖", main: "07.00 WIB",            sub: "s/d Selesai" },
+            { icon: "🕖", main: "06.45 WIB",            sub: "s/d Selesai" },
             { icon: "📍", main: "Aula Graha Adiwiyata", sub: "SMKN 1 Adiwerna" },
           ].map((c, i) => (
             <div key={i}>
