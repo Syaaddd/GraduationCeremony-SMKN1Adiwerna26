@@ -1,57 +1,50 @@
 import { useState, useEffect } from "react";
 
-const TARGET_DATE = new Date("2026-05-06T07:00:00");
+const TARGET = new Date("2026-05-06T06:45:00");
 
 export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState(null);
+  const [t, setT] = useState(null);
 
   useEffect(() => {
-    const calculate = () => {
-      const diff = TARGET_DATE - new Date();
-      if (diff <= 0) return setTimeLeft({ done: true });
-      setTimeLeft({
-        days: Math.floor(diff / 86400000),
-        hours: Math.floor((diff % 86400000) / 3600000),
+    const tick = () => {
+      const diff = TARGET - Date.now();
+      if (diff <= 0) return setT({ done: true });
+      setT({
+        days:    Math.floor(diff / 86400000),
+        hours:   Math.floor((diff % 86400000) / 3600000),
         minutes: Math.floor((diff % 3600000) / 60000),
         seconds: Math.floor((diff % 60000) / 1000),
       });
     };
-    calculate();
-    const id = setInterval(calculate, 1000);
+    tick();
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, []);
 
-  if (!timeLeft) return null;
-
-  if (timeLeft.done) {
-    return (
-      <p className="text-center text-blue-600 font-semibold text-sm">
-        🎓 Acara sedang berlangsung!
-      </p>
-    );
-  }
-
-  const units = [
-    { label: "Hari", value: timeLeft.days },
-    { label: "Jam", value: timeLeft.hours },
-    { label: "Menit", value: timeLeft.minutes },
-    { label: "Detik", value: timeLeft.seconds },
-  ];
+  if (!t) return null;
+  if (t.done) return (
+    <p className="text-center text-blue-600 font-semibold text-sm">🎓 Acara sedang berlangsung!</p>
+  );
 
   return (
     <div className="flex justify-center gap-3">
-      {units.map(({ label, value }) => (
+      {[["Hari",t.days],["Jam",t.hours],["Menit",t.minutes],["Detik",t.seconds]].map(([label,val]) => (
         <div
           key={label}
-          className="flex flex-col items-center bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl px-4 py-3 min-w-[64px] shadow-sm"
+          className="flex flex-col items-center rounded-2xl border border-blue-100 px-4 py-3 min-w-[62px]"
+          style={{
+            background:"rgba(255,255,255,0.65)",
+            backdropFilter:"blur(12px)",
+            boxShadow:"0 2px 12px rgba(59,130,246,0.08)",
+          }}
         >
           <span
-            className="text-2xl font-bold text-blue-600 tabular-nums"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="text-2xl font-bold text-blue-600 tabular-nums leading-none"
+            style={{ fontFamily:"'Playfair Display',serif", fontVariantNumeric:"tabular-nums" }}
           >
-            {String(value).padStart(2, "0")}
+            {String(val).padStart(2,"0")}
           </span>
-          <span className="text-[10px] text-blue-400 font-medium tracking-widest uppercase mt-1">
+          <span className="text-[9px] text-blue-400 font-semibold tracking-widest uppercase mt-1.5">
             {label}
           </span>
         </div>

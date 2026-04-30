@@ -81,29 +81,6 @@ export default function TabUndangan({ student }) {
         </div>
       </div>
 
-      {/* Dress Code Guru */}
-      <div>
-        <p className="text-center text-blue-500 text-xs font-semibold uppercase tracking-widest mb-3">
-          🎩 Dress Code Guru
-        </p>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-slate-50/80 border border-slate-100 rounded-2xl p-4 text-center space-y-2">
-            <div className="text-3xl">🤵</div>
-            <p className="text-slate-700 font-bold text-sm">Bapak Guru</p>
-            <ul className="text-slate-600 text-xs space-y-1 text-left">
-              <li className="flex items-start gap-1.5"><span className="text-slate-300 shrink-0 mt-0.5">▸</span>Jas eksekutif</li>
-            </ul>
-          </div>
-          <div className="bg-purple-50/80 border border-purple-100 rounded-2xl p-4 text-center space-y-2">
-            <div className="text-3xl">👘</div>
-            <p className="text-purple-700 font-bold text-sm">Ibu Guru</p>
-            <ul className="text-purple-600 text-xs space-y-1 text-left">
-              <li className="flex items-start gap-1.5"><span className="text-purple-300 shrink-0 mt-0.5">▸</span>Baju kebaya</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
       <Divider />
 
       {/* Quote */}
