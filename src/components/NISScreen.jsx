@@ -119,27 +119,38 @@ export default function NISScreen({ onVerified }) {
               <p className="text-blue-300 text-[10px] text-center">Format: 23.XXXXX · contoh: 23.20477</p>
             </div>
           ) : (
-            <div className="tab-enter space-y-4 text-center">
-              <div className="text-4xl" style={{ animation:"popBounce 0.7s var(--spring) both" }}>👋</div>
-              <div>
-                <p className="text-blue-400 text-xs">NIS ditemukan! Apakah ini Anda?</p>
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100/40 border border-blue-100 rounded-2xl p-4 mt-2">
-                  <p className="text-blue-800 font-bold text-base leading-snug" style={{ fontFamily:"'Playfair Display',serif" }}>
-                    {toCapital(found?.name ?? "")}
+            <div className="tab-enter">
+              {/* Header */}
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl" style={{ animation:"popBounce 0.7s var(--spring) both" }}>👋</span>
+                <div>
+                  <p className="text-blue-700 font-bold text-base" style={{ fontFamily:"'Playfair Display',serif" }}>
+                    NIS Ditemukan!
                   </p>
-                  <p className="text-blue-400 text-[10px] mt-1 tracking-wide">NIS: {found?.nis}</p>
+                  <p className="text-blue-400 text-xs">Apakah ini Anda?</p>
                 </div>
               </div>
-              <div className="flex gap-2 pt-1">
+
+              {/* Student card */}
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-100 rounded-2xl p-5 mb-5 text-center">
+                <div className="text-3xl mb-2">🎓</div>
+                <p className="text-blue-800 font-bold text-lg leading-snug" style={{ fontFamily:"'Playfair Display',serif" }}>
+                  {toCapital(found?.name ?? "")}
+                </p>
+                <p className="text-blue-400 text-xs mt-1.5 tracking-widest font-medium">NIS: {found?.nis}</p>
+              </div>
+
+              {/* Actions */}
+              <div className="flex gap-2">
                 <button
                   onClick={() => { setStep("input"); setFound(null); setNis(""); }}
-                  className="btn-primary flex-1 py-2.5 rounded-2xl text-xs font-semibold border border-blue-100 text-blue-400 bg-white/60"
+                  className="btn-primary flex-1 py-3 rounded-2xl text-xs font-semibold border border-blue-100 text-blue-400 bg-white/70"
                 >
                   ← Bukan saya
                 </button>
                 <button
                   onClick={() => onVerified(found)}
-                  className="btn-primary flex-1 py-2.5 rounded-2xl text-xs font-semibold text-white shadow-md"
+                  className="btn-primary flex-1 py-3 rounded-2xl text-xs font-semibold text-white shadow-md"
                   style={{ background:"linear-gradient(135deg,#3b82f6,#1d4ed8)" }}
                 >
                   ✓ Ya, lanjut
