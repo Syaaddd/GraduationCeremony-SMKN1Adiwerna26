@@ -66,7 +66,7 @@ export default function TabUndangan({ student }) {
             <div className="text-3xl">👔</div>
             <p className="text-blue-700 font-bold text-sm">Laki-laki</p>
             <ul className="text-blue-600 text-xs space-y-1 text-left">
-              <li className="flex items-start gap-1.5"><span className="text-blue-300 shrink-0 mt-0.5">▸</span>Jas eksekutif</li>
+              <li className="flex items-start gap-1.5"><span className="text-blue-300 shrink-0 mt-0.5">▸</span>Jas eksekutif Hitam</li>
               <li className="flex items-start gap-1.5"><span className="text-blue-300 shrink-0 mt-0.5">▸</span>Dasi warna bebas</li>
             </ul>
           </div>
